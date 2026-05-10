@@ -23,7 +23,7 @@ export default function Taskbar({ apps, onToggleApp , onOpenApp}) {
       {isMenuOpen && (
         <div className="window start-menu">
           <div className="window-body start-menu-items">
-            <button className="menu-item" onClick={() => handleOpenApp('about')}>
+            <button className="menu-item" onClick={() => handleOpenApp('browser')}>
               👨‍💻 Về bản thân
             </button>
             <button className="menu-item" onClick={() => handleOpenApp('projects')}>
