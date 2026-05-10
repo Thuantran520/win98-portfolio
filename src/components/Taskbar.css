@@ -1,0 +1,103 @@
+/* src/components/Taskbar.css */
+
+.taskbar-container {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 35px;
+  background-color: #c0c0c0;
+  border-top: 2px solid #dfdfdf;
+  display: flex;
+  align-items: center;
+  padding: 0 4px;
+  z-index: 9999;
+}
+
+.start-button {
+  font-weight: bold;
+}
+
+.start-menu {
+  position: absolute;
+  bottom: 35px;
+  left: 2px;
+  width: 200px;
+  z-index: 10000;
+}
+
+.start-menu-items {
+  margin: 0;
+  padding: 2px;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+/* Style cho các lựa chọn trong Menu */
+.menu-item {
+  text-align: left;
+  border: none;
+  background: transparent;
+  padding: 4px;
+  cursor: pointer;
+}
+
+/* Thêm hiệu ứng hover: Di chuột vào sẽ đổi sang nền xanh biển đậm đặc trưng của Win 98 */
+.menu-item:hover {
+  background-color: #000080;
+  color: white;
+}
+
+.clock-container {
+  padding: 2px 10px;
+  display: flex;
+  align-items: center;
+  height: 100%;
+}
+
+/* Khu vực icon khởi động nhanh (Quick Launch) */
+.quick-launch {
+  display: flex;
+  align-items: center;
+  gap: 2px;
+  padding: 0 6px;
+  border-left: 1px solid #dfdfdf;
+  border-right: 1px solid #808080;
+  margin-left: 4px;
+  height: 28px;
+}
+
+.quick-launch-btn {
+  background: transparent;
+  border: none;
+  box-shadow: none;
+  min-width: 0;
+  padding: 2px;
+  cursor: pointer;
+}
+
+.quick-launch-btn img {
+  width: 16px;
+  height: 16px;
+}
+
+/* Khu vực chứa các cửa sổ đang mở (Nằm giữa Taskbar) */
+.taskbar-apps {
+  display: flex;
+  flex-grow: 1; /* Chiếm hết khoảng trống ở giữa */
+  gap: 4px;
+  padding-left: 10px;
+  align-items: center;
+}
+
+/* Style cho một ứng dụng đang mở trên taskbar */
+.taskbar-app-btn {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  width: 128px; /* Độ dài vừa phải giống Win98 */
+  justify-content: flex-start; /* Ép chữ và icon nằm bên trái */
+  font-weight: bold;
+  padding: 2px 4px;
+}

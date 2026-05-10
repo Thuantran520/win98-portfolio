@@ -1,0 +1,120 @@
+/* 1. Ép tất cả mọi thứ không bị phình to khi thêm viền/padding */
+* {
+  box-sizing: border-box;
+}
+
+/* 2. Xóa sạch lề thừa của trình duyệt */
+body, html {
+  margin: 0;
+  padding: 0;
+  width: 100vw;
+  height: 100vh;
+}
+
+/* Ép cửa sổ phóng to full màn hình, trừ đi 35px của thanh Taskbar */
+.maximized-window {
+  transform: translate(0px, 0px) !important;
+  width: 100vw !important;
+  height: calc(100vh - 35px) !important;
+  top: 0 !important;
+  left: 0 !important;
+}
+
+/* Style cho các Icon ngoài màn hình Desktop */
+.desktop-icon {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 80px;
+  cursor: pointer;
+  padding: 5px;
+  text-align: center;
+}
+
+.desktop-icon img {
+  width: 32px;
+  height: 32px;
+  margin-bottom: 5px;
+}
+
+.desktop-icon span {
+  color: white;
+  font-size: 12px;
+  /* Tạo viền đen cho chữ giống hệt Windows cũ */
+  text-shadow: 1px 1px 0 #000, -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000;
+  padding: 2px 4px;
+}
+
+/* Hiệu ứng khi nhấp 1 lần (Focus) vào Icon */
+.desktop-icon:active span,
+.desktop-icon:focus span {
+  background-color: #000080; /* Nền xanh đậm */
+  border: 1px dotted #fff; /* Viền đứt khúc đặc trưng */
+}
+
+/* Custom Thanh cuộn (Scrollbar) chuẩn phong cách Windows 98 */
+::-webkit-scrollbar {
+  width: 16px;
+  height: 16px;
+}
+
+::-webkit-scrollbar-track {
+  background: #dfdfdf;
+  border-left: 1px solid #fff;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #c0c0c0;
+  border-top: 1px solid #fff;
+  border-left: 1px solid #fff;
+  border-bottom: 1px solid #000;
+  border-right: 1px solid #000;
+  box-shadow: inset 1px 1px #dfdfdf, inset -1px -1px #808080;
+}
+
+/* Nút mũi tên lên/xuống của thanh cuộn */
+::-webkit-scrollbar-button:single-button {
+  background-color: #c0c0c0;
+  display: block;
+  height: 16px;
+  width: 16px;
+  border-top: 1px solid #fff;
+  border-left: 1px solid #fff;
+  border-bottom: 1px solid #000;
+  border-right: 1px solid #000;
+  box-shadow: inset 1px 1px #dfdfdf, inset -1px -1px #808080;
+}
+
+/* --- HIỆU ỨNG CHO AVATAR TRONG BROWSER --- */
+.avatar-retro {
+  width: 220px;
+  height: 260px;
+  object-fit: cover;
+  border: 2px solid #000;
+  padding: 2px;
+  background-color: #fff;
+  
+  /* LỆNH DI CHUYỂN: Đẩy ảnh sang trái, chữ sẽ tự động bao quanh bên phải */
+  float: left; 
+  margin: 5px 20px 10px 0; 
+  
+  /* HIỆU ỨNG: Mặc định ảnh sẽ bị biến thành trắng đen (hoài cổ) */
+  filter: grayscale(100%);
+  
+  /* Tạo độ mượt khi chuyển đổi trạng thái */
+  transition: all 0.3s ease; 
+  cursor: pointer;
+}
+
+/* KHI DI CHUỘT VÀO (HOVER) */
+.avatar-retro:hover {
+  /* Hiệu ứng 1: Trả lại màu gốc cho ảnh */
+  filter: grayscale(0%); 
+  
+  /* Hiệu ứng 2: Phóng to nhẹ lên 1.1 lần */
+  transform: scale(1.1); 
+  
+  /* Hiệu ứng 3: Đổi màu viền sang xanh đặc trưng của Win98 */
+  border-color: #000080; 
+  box-shadow: 2px 2px 5px rgba(0,0,0,0.5);
+}
